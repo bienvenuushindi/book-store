@@ -10,7 +10,7 @@ const BookForm = (props) => {
     <div>
       <h2>ADD NEW BOOK</h2>
       <form>
-        <input type="text" name="title" />
+        <input type="text" name="title" style={{ marginRight: '2rem' }} />
         <select>
           <option value="author">Author</option>
           {optionList}

@@ -1,3 +1,4 @@
+import './App.css';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -10,7 +11,7 @@ function App() {
       <header className="App-header">
         <Navbar />
       </header>
-      <div className="content">
+      <div className="content" style={{ marginTop: '2rem' }}>
         <Routes>
           <Route path="/" element={<Books />} />
           <Route path="/categories" element={<Categories />} />
