@@ -1,21 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import Book from '../components/book';
 import BookForm from '../components/book-form';
+import BookList from '../components/book-list';
 
 const Books = () => {
   const [books, setBooks] = useState([]);
-  useEffect(() => {
-    const data = [];// Will store the fetched  list of book
-    setBooks(data);
-  }, []);
-  const list = books.map((book) => {
-    const { author, id, title } = book;
-    return <Book key={id} title={title} author={author} />;
-  });
-
+  const bookList = (items) => {
+    setBooks([...items]);
+  };
   return (
     <div className="Home" style={{ paddingTop: '2rem' }}>
-      {list}
+      <BookList shareBookList={bookList} />
       <BookForm books={books} />
     </div>
   );
