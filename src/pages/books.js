@@ -8,7 +8,11 @@ const Books = () => {
     const data = [];// Will store the fetched  list of book
     setBooks(data);
   }, []);
-  const list = books.map((book) => <Book key={book.id} title={book.title} author={book.author} />);
+  const list = books.map((book) => {
+    const { author, id, title } = book;
+    return <Book key={id} title={title} author={author} />;
+  });
+
   return (
     <div className="Home" style={{ paddingTop: '2rem' }}>
       {list}
