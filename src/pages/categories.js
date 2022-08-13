@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Categories = () => (
-  <div className="Home" style={{ paddingTop: '2rem' }}>
-    Categories
+  <div>
+    <button type="button">Check status</button>
   </div>
 );
 export default Categories;
