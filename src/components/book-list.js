@@ -1,31 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Book from './book';
+import { removeBook } from '../redux/books/books';
 
-const BookList = (props) => {
-  const { shareBookList } = props;
-  const [books, setBooks] = useState([]);
-
-  useEffect(() => {
-    const data = [];// Will store the fetched  list of book
-    setBooks(data);
-  }, []);
-
-  useEffect(() => {
-    shareBookList([...books]);
-  }, [books]);
-
+const BookList = () => {
+  const dispatch = useDispatch();
+  const books = useSelector((state) => state.books);
   const list = books.map((book) => {
-    const { author, id, title } = book;
-    return <Book key={id} title={title} author={author} />;
+    const { author, title } = book;
+    return (
+      <Book
+        key={author + title}
+        title={title}
+        author={author}
+        remove={() => dispatch(removeBook({ title, author }))}
+      />
+    );
   });
   return (
     <div>
       {list}
     </div>
   );
-};
-BookList.propTypes = {
-  shareBookList: PropTypes.func.isRequired,
 };
 export default BookList;
