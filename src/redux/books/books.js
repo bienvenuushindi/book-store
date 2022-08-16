@@ -4,8 +4,11 @@ const CREATE = 'book-store/books/CREATE';
 const UPDATE = 'book-store/books/UPDATE';
 const LOAD = 'book-store/books/LOAD';
 const REMOVE = 'book-store/books/REMOVE';
-
-const bookReducer = (state = [], action = {}) => {
+const someDefaultBooks = [
+  { title: 'Introduction to Algorithms Third Edition', author: 'Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein' },
+  { title: 'Algorithms  Fourth Edition', author: 'Robert Sedgewick and Kevin Wayne' },
+];
+const bookReducer = (state = [...someDefaultBooks], action = {}) => {
   switch (action.type) {
     case CREATE: {
       return [...state, action.book];
