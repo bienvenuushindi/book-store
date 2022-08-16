@@ -7,7 +7,7 @@ const categoryReducer = (state = [], action = {}) => {
   return state;
 };
 
-const checkStatus = (book) => ({ type: CHECK_STATUS, book });
+const checkStatus = () => ({ type: CHECK_STATUS });
 
 export { checkStatus };
 export default categoryReducer;
