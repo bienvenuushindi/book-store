@@ -7,13 +7,13 @@ const BookList = () => {
   const dispatch = useDispatch();
   const books = useSelector((state) => state.books);
   const list = books.map((book) => {
-    const { author, title } = book;
+    const { author, title, id } = book;
     return (
       <Book
-        key={author + title}
+        key={id}
         title={title}
         author={author}
-        remove={() => dispatch(removeBook({ title, author }))}
+        remove={() => dispatch(removeBook(book))}
       />
     );
   });
