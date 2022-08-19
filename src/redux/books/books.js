@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { apiUrl } from '../../env';
+import { add, load, remove } from '../../api/book';
 
 const CREATE = 'book-store/books/CREATE';
 const CREATE_FULFILLED = 'book-store/books/CREATE/fulfilled';
@@ -23,40 +23,9 @@ const bookReducer = (state = [], action = {}) => {
   }
 };
 
-const createBook = createAsyncThunk(CREATE, async (book) => {
-  const createdBook = { book: [] };
-  await fetch(apiUrl, {
-    method: 'POST',
-    body: JSON.stringify(book),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  }).then(() => {
-    const {
-      item_id: id, title, author, category,
-    } = book;
-    createdBook.book = [id, [{ title, author, category }]];
-  });
-  return createdBook;
-});
-const loadBook = createAsyncThunk(LOAD, async () => {
-  let result = [];
-  await fetch(apiUrl)
-    .then((res) => res.json())
-    .then((data) => {
-      result = [...Object.entries(data)];
-    });
-  return { book: result };
-});
-const removeBook = createAsyncThunk(REMOVE, async (id) => {
-  await fetch(`${apiUrl}/${id}`, {
-    method: 'DELETE',
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  });
-  return { id };
-});
+const createBook = createAsyncThunk(CREATE, async (book) => add(book));
+const loadBook = createAsyncThunk(LOAD, async () => load());
+const removeBook = createAsyncThunk(REMOVE, async (id) => remove(id));
 
 export {
   createBook, loadBook, removeBook,
