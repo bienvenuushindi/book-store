@@ -29,14 +29,13 @@ const BookForm = () => {
     };
     dispatch(createBook(book));
   };
-  const optionList = [];
-  // books.forEach(([key, value]) => {
-  //   const id = key;
-  //   const { author } = value[0];
-  //   optionList.push(
-  //     <option key={id} value={author}>{author}</option>,
-  //   );
-  // });
+  const optionList = books.map((item) => {
+    const id = item[0];
+    const { author: bookAuthor } = item[1][0];
+    return (
+      <option key={id} value={bookAuthor}>{bookAuthor}</option>
+    );
+  });
   const { title, author } = formData;
   return (
     <div>
