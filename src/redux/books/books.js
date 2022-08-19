@@ -1,48 +1,64 @@
-import _ from 'lodash';
-import { v4 as uuidv4 } from 'uuid';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { apiUrl } from '../../env';
 
 const CREATE = 'book-store/books/CREATE';
-const UPDATE = 'book-store/books/UPDATE';
+const CREATE_FULFILLED = 'book-store/books/CREATE/fulfilled';
 const LOAD = 'book-store/books/LOAD';
+const LOAD_FULFILLED = 'book-store/books/LOAD/fulfilled';
 const REMOVE = 'book-store/books/REMOVE';
-const someDefaultBooks = [
-  { title: 'Introduction to Algorithms Third Edition', author: 'Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein', id: uuidv4() },
-  { title: 'Algorithms  Fourth Edition', author: 'Robert Sedgewick and Kevin Wayne', id: uuidv4() },
-];
-const bookReducer = (state = [...someDefaultBooks], action = {}) => {
+const REMOVE_FULFILLED = 'book-store/books/REMOVE/fulfilled';
+const bookReducer = (state = [], action = {}) => {
   switch (action.type) {
-    case CREATE: {
-      return [...state, action.book];
+    case CREATE_FULFILLED: {
+      return [...state, action.payload.book];
     }
-    case UPDATE:
-      return state.map((item) => {
-        if (_.isEqual(item, action.book)) return { ...item, ...action.book };
-        return item;
-      });
-    case LOAD:
-      return { ...state };
-    case REMOVE: {
-      const index = state.findIndex((item) => item.id === action.book.id);
-      return [
-        ...state.slice(0, index),
-        ...state.slice(index + 1),
-      ];
+    case LOAD_FULFILLED: {
+      return [...action.payload.book];
     }
-
+    case REMOVE_FULFILLED: {
+      return [...state.filter((item) => item[0] !== action.payload.id)];
+    }
     default:
       return state;
   }
 };
 
-const createBook = (book) => {
-  const id = uuidv4();
-  return ({ type: CREATE, book: { ...book, id } });
-};
-const updateBook = (book) => ({ type: UPDATE, book });
-const loadBook = () => ({ type: LOAD });
-const removeBook = (book) => ({ type: REMOVE, book });
+const createBook = createAsyncThunk(CREATE, async (book) => {
+  const createdBook = { book: [] };
+  await fetch(apiUrl, {
+    method: 'POST',
+    body: JSON.stringify(book),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  }).then(() => {
+    const {
+      item_id: id, title, author, category,
+    } = book;
+    createdBook.book = [id, [{ title, author, category }]];
+  });
+  return createdBook;
+});
+const loadBook = createAsyncThunk(LOAD, async () => {
+  let result = [];
+  await fetch(apiUrl)
+    .then((res) => res.json())
+    .then((data) => {
+      result = [...Object.entries(data)];
+    });
+  return { book: result };
+});
+const removeBook = createAsyncThunk(REMOVE, async (id) => {
+  await fetch(`${apiUrl}/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+  return { id };
+});
 
 export {
-  createBook, updateBook, loadBook, removeBook,
+  createBook, loadBook, removeBook,
 };
 export default bookReducer;
