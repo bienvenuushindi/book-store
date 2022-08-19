@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { createBook } from '../redux/books/books';
 
 const BookForm = () => {
@@ -18,12 +19,24 @@ const BookForm = () => {
     e.preventDefault();
     const { title, author } = formData;
     if (title.trim() === '' || author.trim() === '') return;
-    dispatch(createBook({ title, author }));
+    const id = uuidv4();
+    const category = 'Fiction';
+    const book = {
+      item_id: id,
+      title,
+      author,
+      category,
+    };
+    dispatch(createBook(book));
   };
-  const optionList = books.map((book) => {
-    const { author } = book;
-    return <option key={author} value={author}>{author}</option>;
-  });
+  const optionList = [];
+  // books.forEach(([key, value]) => {
+  //   const id = key;
+  //   const { author } = value[0];
+  //   optionList.push(
+  //     <option key={id} value={author}>{author}</option>,
+  //   );
+  // });
   const { title, author } = formData;
   return (
     <div>
