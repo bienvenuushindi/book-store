@@ -15,7 +15,7 @@
 }
 
 body {
-  width: 87.5rem;
+  width: 90%;
   border-radius: 4px;
   box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
   margin-left: auto;
@@ -27,4 +27,25 @@ body {
   font-style: normal;
   line-height: normal;
   background-color: #fafafa;
+  overflow-x: hidden;
+}
+
+.font-montserrat,
+.item-category,
+.form-title,
+.item-progress-percent-complete,
+.item-progress-completed-text,
+.app-name,
+.App-link {
+  font-family: Montserrat, serif;
+}
+
+.item-title,
+.item-author,
+.item-button,
+.item-current-chapter,
+.item-current-lesson,
+.item-progress-update-button-text,
+.font-robotoslab {
+  font-family: RobotoSlab, serif;
 }

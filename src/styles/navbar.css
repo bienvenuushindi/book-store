@@ -1,7 +1,7 @@
 .nav {
-  width: 87.5rem;
+  width: 100%;
   height: 5.938rem;
-  margin: 0 0 2.375rem;
+  margin: 2.375rem 0;
   padding: 1.438rem 6.188rem 1.688rem 6.25rem;
   background-color: #fff;
   border-bottom: solid 1px #e8e8e8;
@@ -10,7 +10,6 @@
 .app-name {
   width: 15rem;
   margin: 0 3rem 0.8rem 0.12rem;
-  font-family: Montserrat, serif;
   font-size: 1.875rem;
   font-weight: bold;
   letter-spacing: normal;
@@ -19,7 +18,6 @@
 
 .App-link {
   margin: 0.5rem 1rem;
-  font-family: Montserrat, serif;
   font-size: 0.813rem;
   letter-spacing: 2px;
   color: #121212;
@@ -29,12 +27,4 @@
 
 .opacity-5 {
   opacity: 0.5;
-}
-
-.Oval {
-  width: 2.813rem;
-  height: 2.813rem;
-  margin: 0 0 0 41.5rem;
-  padding: 0.875rem;
-  border: solid 1px #e8e8e8;
 }
