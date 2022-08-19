@@ -1,0 +1,178 @@
+.item-panel {
+  width: 90%;
+  height: min-content;
+  margin: 2.313rem auto;
+  padding: 2rem 1.688rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+}
+
+.item-category {
+  margin: 0 2.438rem 0 0;
+  opacity: 0.5;
+  font-size: 0.875rem;
+  font-weight: bold;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.item-title {
+  margin: 0.188rem 0;
+  font-size: 1.375rem;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  color: #121212;
+  text-transform: capitalize;
+}
+
+.item-author {
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.item-button {
+  width: min-content;
+  height: 1.188rem;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: normal;
+  color: #4386bf;
+  border: none;
+  background-color: #fff;
+}
+
+.item-button:not(:last-child) {
+  border-right: 1px solid #e8e8e8;
+  padding-right: 1.063rem;
+}
+
+.item-progress-oval {
+  width: 5rem;
+  height: 5rem;
+  border-style: solid;
+  border-color: #fff;
+  border-radius: 50%;
+}
+
+.oval-5 {
+  background:
+    conic-gradient(
+      rgb(3, 133, 255) 5%,
+      rgb(242, 242, 242) 5%
+    );
+}
+
+.oval-10 {
+  background:
+    conic-gradient(
+      rgb(3, 133, 255) 10%,
+      rgb(242, 242, 242) 10%
+    );
+}
+
+.oval-20 {
+  background:
+    conic-gradient(
+      rgb(3, 133, 255) 20%,
+      rgb(242, 242, 242) 20%
+    );
+}
+
+.oval-40 {
+  background:
+    conic-gradient(
+      rgb(3, 133, 255) 40%,
+      rgb(242, 242, 242) 40%
+    );
+}
+
+.oval-50 {
+  background:
+    conic-gradient(
+      rgb(3, 133, 255) 50%,
+      rgb(242, 242, 242) 50%
+    );
+}
+
+.oval-65 {
+  background:
+    conic-gradient(
+      rgb(3, 133, 255) 65%,
+      rgb(242, 242, 242) 65%
+    );
+}
+
+.oval-80 {
+  background:
+    conic-gradient(
+      rgb(3, 133, 255) 80%,
+      rgb(242, 242, 242) 80%
+    );
+}
+
+.item-progress-oval::after {
+  content: '';
+  width: 3.5rem;
+  height: 3.5rem;
+  border-style: solid;
+  border-color: #fff;
+  background: #fff;
+  position: absolute;
+  border-radius: 50%;
+  margin-left: 0.4rem;
+  margin-top: 6px;
+}
+
+.item-progress-percent-complete {
+  margin: 0.063rem 5.75rem 0 0.688rem;
+  font-size: 2rem;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.item-progress-completed-text {
+  margin: 0.438rem 4.938rem 0.75rem 0.75rem;
+  opacity: 0.5;
+  font-size: 0.875rem;
+  letter-spacing: normal;
+}
+
+.item-current-chapter {
+  margin: 0.063rem 0;
+  opacity: 0.5;
+  font-size: 0.813rem;
+  font-weight: 300;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.item-current-lesson {
+  margin: 0.438rem 0;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  color: #121212;
+}
+
+.item-progress-update-button-text {
+  font-size: 0.813rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.item-progress-update-button {
+  width: 70%;
+  margin: 1.4rem 0;
+  padding: 0.438rem 10px;
+  border-radius: 3px;
+  background-color: #0290ff;
+  text-align: center;
+}

@@ -1,3 +1,4 @@
+import '../styles/book-form.css';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
@@ -38,15 +39,17 @@ const BookForm = () => {
   });
   const { title, author } = formData;
   return (
-    <div>
-      <h2>ADD NEW BOOK</h2>
-      <form id="book-form" onSubmit={addBook}>
-        <input type="text" name="title" value={title} style={{ marginRight: '2rem' }} onChange={updateForm} />
-        <input list="book-authors" name="author" value={author} id="book-author" onChange={updateForm} />
-        <datalist id="book-authors">
-          {optionList}
-        </datalist>
-        <button type="submit" name="add-book">Create Book</button>
+    <div style={{ width: '90%', margin: 'auto' }}>
+      <h2 className="form-title">ADD NEW BOOK</h2>
+      <form id="book-form" onSubmit={addBook} style={{ display: 'grid', gridTemplateColumns: '2fr 2fr 1fr', gap: '1rem' }}>
+        <input type="text" name="title" value={title} onChange={updateForm} className="input-control" placeholder="Book Title" />
+        <div className="select-box">
+          <input list="book-authors" name="author" value={author} id="book-author" placeholder="Category" style={{ width: '100%' }} onChange={updateForm} className="input-control" />
+          <datalist id="book-authors">
+            {optionList}
+          </datalist>
+        </div>
+        <button type="submit" name="add-book" className="form-button">Add Book</button>
       </form>
     </div>
   );
