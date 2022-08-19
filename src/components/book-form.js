@@ -39,7 +39,7 @@ const BookForm = () => {
   });
   const { title, author } = formData;
   return (
-    <div style={{ width: '75rem', margin: 'auto' }}>
+    <div style={{ width: '90%', margin: 'auto' }}>
       <h2 className="form-title">ADD NEW BOOK</h2>
       <form id="book-form" onSubmit={addBook} style={{ display: 'grid', gridTemplateColumns: '2fr 2fr 1fr', gap: '1rem' }}>
         <input type="text" name="title" value={title} onChange={updateForm} className="input-control" placeholder="Book Title" />

@@ -10,7 +10,7 @@ const Books = () => (
       style={{
         height: '0.14rem',
         border: 'solid 1px #e8e8e8',
-        width: '75rem',
+        width: '90%',
         margin: '3rem auto',
       }}
     />
