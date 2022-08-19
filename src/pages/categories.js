@@ -6,8 +6,8 @@ const Categories = () => {
   const dispatch = useDispatch();
   const status = useSelector(((state) => state.categories));
   return (
-    <div>
-      <button type="button" onClick={() => dispatch(checkStatus())}>Check status</button>
+    <div className="item-panel" style={{ textAlign: 'center' }}>
+      <button type="button" className="form-button" onClick={() => dispatch(checkStatus())}>Check status</button>
       <p>{status}</p>
     </div>
   );
