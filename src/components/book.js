@@ -5,6 +5,11 @@ const Book = (props) => {
   const {
     author, title, remove, category, progress,
   } = props;
+
+  const backgroundValue = `conic-gradient(rgb(3, 133, 255) ${progress}%,rgb(242, 242, 242) ${progress}%)`;
+  const ovalProgress = {
+    background: backgroundValue,
+  };
   return (
     <div className="item-panel" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr' }}>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -18,7 +23,7 @@ const Book = (props) => {
         </div>
       </div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <div className={`item-progress-oval oval-${progress}`} />
+        <div className="item-progress-oval" style={ovalProgress} />
         <div>
           <div className="item-progress-percent-complete">
             {`${progress}%`}

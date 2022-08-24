@@ -59,62 +59,6 @@
   border-radius: 50%;
 }
 
-.oval-5 {
-  background:
-    conic-gradient(
-      rgb(3, 133, 255) 5%,
-      rgb(242, 242, 242) 5%
-    );
-}
-
-.oval-10 {
-  background:
-    conic-gradient(
-      rgb(3, 133, 255) 10%,
-      rgb(242, 242, 242) 10%
-    );
-}
-
-.oval-20 {
-  background:
-    conic-gradient(
-      rgb(3, 133, 255) 20%,
-      rgb(242, 242, 242) 20%
-    );
-}
-
-.oval-40 {
-  background:
-    conic-gradient(
-      rgb(3, 133, 255) 40%,
-      rgb(242, 242, 242) 40%
-    );
-}
-
-.oval-50 {
-  background:
-    conic-gradient(
-      rgb(3, 133, 255) 50%,
-      rgb(242, 242, 242) 50%
-    );
-}
-
-.oval-65 {
-  background:
-    conic-gradient(
-      rgb(3, 133, 255) 65%,
-      rgb(242, 242, 242) 65%
-    );
-}
-
-.oval-80 {
-  background:
-    conic-gradient(
-      rgb(3, 133, 255) 80%,
-      rgb(242, 242, 242) 80%
-    );
-}
-
 .item-progress-oval::after {
   content: '';
   width: 3.5rem;
