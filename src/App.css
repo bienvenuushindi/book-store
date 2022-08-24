@@ -1,3 +1,51 @@
+@import url('http://fonts.cdnfonts.com/css/montserrat');
+
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --bubble-gum-pink: #ff5ab7;
+  --black: #000;
+  --pinkish-grey: #c7c7c7;
+  --warm-grey: #888;
+  --very-light-pink: #c4c4c4;
+  --medium-blue: #307bbe;
+  --pale-grey: #f5f6fa;
+}
+
+body {
+  width: 90%;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 5rem;
+  margin-bottom: 5rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  background-color: #fafafa;
+  overflow-x: hidden;
+}
+
+.font-montserrat,
+.item-category,
+.form-title,
+.item-progress-percent-complete,
+.item-progress-completed-text,
+.app-name,
+.App-link {
+  font-family: Montserrat, serif;
+}
+
+.item-title,
+.item-author,
+.item-button,
+.item-current-chapter,
+.item-current-lesson,
+.item-progress-update-button-text,
+.font-robotoslab {
+  font-family: RobotoSlab, serif;
 }
