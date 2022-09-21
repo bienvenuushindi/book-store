@@ -4,7 +4,7 @@ A react app that displays a list of books, adds a book, removes a selected book.
 - HTML, CSS, JavaScript, React, Redux
 - Git, Linters, Webpack
 ## Demo
- [Under Construction](https://bienvenuushindi.github.io/book-store/)
+ [Live](https://bienvenuushindi.github.io/book-store/)
 
 
 ## Getting Started
